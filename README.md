@@ -1,6 +1,6 @@
-# Jared A. Ball Book Archive
+# YouTube Book Archive
 
-Searchable archive of books mentioned in Jared A. Ball videos.
+Searchable archive of books mentioned in YouTube videos.
 
 ## Setup
 
@@ -14,6 +14,6 @@ cp .env.example .env
 Set `YOUTUBE_API_KEY`, then run:
 
 ```sh
-python -m worker inventory --handle @jaredaball
+python -m worker inventory --handle @channelhandle
 python -m worker transcript-pilot --sample-size 20
 ```
