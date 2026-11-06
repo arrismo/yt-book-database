@@ -1,0 +1,21 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local databases and generated data
+data/*
+!data/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+
+# OS/editor files
+.DS_Store

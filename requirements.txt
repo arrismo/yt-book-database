@@ -1,0 +1,2 @@
+# Optional transcript pilot dependency; inventory uses Python's standard library.
+youtube-transcript-api==1.2.3
