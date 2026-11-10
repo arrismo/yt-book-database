@@ -151,7 +151,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--database')
     sub=p.add_subparsers(dest='command',required=True)
     for name in ('seed','match','export','build'):sub.add_parser(name)
-    q=sub.add_parser('inventory');q.add_argument('--handle',default='@jaredaball');q.add_argument('--dry-run',action='store_true')
+    q=sub.add_parser('inventory');q.add_argument('--handle',required=True,help='YouTube channel handle, for example @yourchannel');q.add_argument('--dry-run',action='store_true')
     q=sub.add_parser('transcript-pilot');q.add_argument('--sample-size',type=int,default=10);q.add_argument('--dry-run',action='store_true')
     args=p.parse_args();db=database(args.database);start=NOW()
     try:

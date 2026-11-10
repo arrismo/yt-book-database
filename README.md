@@ -1,15 +1,15 @@
-# Reading Room — Jared A. Ball book archive
+# Reading Room — YouTube book archive
 
 Private catalog built with Next-compatible TypeScript/React (Vinext on Sites), a Python ingestion CLI, and local SQLite. No Supabase, models, embeddings, or generative extraction.
 
 ## First usable version
 
-- 11 real books; 14 manually reviewed references; 10 source videos verified against `@jaredaball` via YouTube oEmbed.
+- 11 real books; 14 manually reviewed references; 10 source videos checked against their channel via YouTube oEmbed.
 - 10/10 selected transcripts retrieved with `youtube-transcript-api==1.2.4`; 22,828 segments processed during the November 9, 2026 pilot.
 - Browse, search across titles/authors/evidence/video titles, filter subjects and evidence types, sort, switch grid/list, open a deep-linked book record, follow timestamped video links, export the catalog, and save books to a browser-local reading shelf.
-- Covers and work metadata from Open Library. Ball's own book page corrects the catalog's misspelled “Jared Bell” author for *I Mix What I Like!*. Unverified publication years remain null. ISBN identifies a catalog edition; it may differ from the cover edition.
+- Covers and work metadata from Open Library. Primary source pages were used to correct catalog metadata errors. Unverified publication years remain null. ISBN identifies a catalog edition; it may differ from the cover edition.
 - Full-channel inventory was **not** run: no `YOUTUBE_API_KEY` was available. This is a transparent, manually selected pilot, not an exhaustive archive or a representative coverage estimate.
-- Manual seed sources are Ball's public website, linked YouTube video titles, accessible captions, and Open Library. All seed videos are on `@jaredaball`. Source-page dates are kept distinct from video publication dates, which are unknown for the seed.
+- Manual seed sources are public source pages, linked YouTube video titles, accessible captions, and Open Library. The starter collection comes from one source channel; additional channels have not yet been imported. Source-page dates are kept distinct from video publication dates, which are unknown for the seed.
 - The site does not infer endorsement. Exact lexical matches require context review. Jingle-only references and unrelated short-title matches were excluded.
 
 ## Run locally
@@ -24,13 +24,17 @@ npm run dev
 
 Use `sites-preview start <checkout>` for the managed Sites preview. Do not launch a second server there.
 
+## Adding other channels
+
+The archive is channel-neutral. Each video retains its own `channel_id`, and source-channel links are derived from that ID. Book authors, video titles, source URLs, and short evidence excerpts retain their real attribution. The inventory command requires an explicit handle; there is no default creator. Run it separately for each channel you want to inventory. Adding a channel still requires local ingestion, matching, manual review, and a catalog export; this version has no channel-management UI.
+
 ## Ingestion workflow
 
 ```bash
 # Set a local server-side API key; never add it to browser code or Git.
 export YOUTUBE_API_KEY='<your key>'
-python -m ingest inventory --handle @jaredaball --dry-run
-python -m ingest inventory --handle @jaredaball
+python -m ingest inventory --handle @yourchannel --dry-run
+python -m ingest inventory --handle @yourchannel
 python -m ingest transcript-pilot --sample-size 10 --dry-run
 python -m ingest transcript-pilot --sample-size 10
 python -m ingest match

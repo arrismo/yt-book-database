@@ -27,6 +27,9 @@ export function timecode(seconds: number) {
 export function videoLink(video: Video, mention: Mention) {
   return video.url + (mention.start_seconds === null ? "" : `&t=${Math.floor(mention.start_seconds)}s`);
 }
+export function channelLink(video: Pick<Video, "channel_id">) {
+  return `https://www.youtube.com/channel/${encodeURIComponent(video.channel_id)}`;
+}
 export function searchBooks(catalog: Catalog, query: string, subject: string, evidence: string, savedOnly: boolean, saved: string[], sort: string) {
   const terms = normalize(query.trim()).split(/\s+/).filter(Boolean);
   const result = catalog.books.filter(b => {

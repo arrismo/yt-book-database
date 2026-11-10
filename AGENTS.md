@@ -1,6 +1,6 @@
 # Reading Room repository instructions
 
-- This repository contains the working private Jared A. Ball book archive built for Sites.
+- This repository contains the working private book archive for YouTube channels built for Sites.
 - Keep the site owner-private. Do not change sharing or publish publicly without the user's explicit approval.
 - Keep SQLite and deterministic title/author matching. Do not add Supabase, model-based extraction, embeddings, or generated evidence.
 - The frontend uses TypeScript/React and Next-compatible Vinext. `worker/index.ts` is the Sites runtime worker; Python ingestion is in `ingest/`.
@@ -15,3 +15,5 @@
   - `node node_modules/typescript/bin/tsc --noEmit`
   - `python -m ingest build`
   - `npm run build`
+
+- Keep the product branding channel-neutral. Use each video’s own channel ID for source links. Preserve truthful author, source, and quotation attribution in records. Require an explicit `--handle` for inventory; do not hardcode a creator as the default.

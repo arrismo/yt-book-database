@@ -24,14 +24,14 @@ class PipelineTests(unittest.TestCase):
             page={'items':[{'snippet':{'title':v,'publishedAt':'2024-01-01'},'contentDetails':{'videoId':v}}]}
             if not params.get('pageToken'):page['nextPageToken']='next'
             return page
-        self.assertEqual(inventory(self.db,'@jaredaball',get,'test-key')['videos'],2)
-        inventory(self.db,'@jaredaball',get,'test-key')
+        self.assertEqual(inventory(self.db,'@examplechannel',get,'test-key')['videos'],2)
+        inventory(self.db,'@examplechannel',get,'test-key')
         self.assertEqual(self.db.execute('SELECT count(*) FROM videos').fetchone()[0],2)
         self.assertTrue(any(p.get('pageToken')=='next' for _,p in requests))
     def test_inventory_dry_run_does_not_write_videos(self):
         def get(resource,params,key):
             return {'items':[{'id':'ch','contentDetails':{'relatedPlaylists':{'uploads':'pl'}}}]} if resource=='channels' else {'items':[]}
-        self.assertEqual(inventory(self.db,'@jaredaball',get,'key',True)['videos'],0)
+        self.assertEqual(inventory(self.db,'@examplechannel',get,'key',True)['videos'],0)
         self.assertEqual(self.db.execute('SELECT count(*) FROM videos').fetchone()[0],0)
     def test_caption_timestamp_and_idempotent_storage(self):
         self.video()

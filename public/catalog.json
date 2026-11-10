@@ -350,7 +350,7 @@
       "confidence": null,
       "review_status": "confirmed",
       "extraction_method": "manual_source_review",
-      "note": "Book title on Ball’s source page, which embeds this anniversary video. No timestamp inferred."
+      "note": "Book title on the source page, which embeds this anniversary video. No timestamp inferred."
     },
     {
       "id": "buying-power-4EcT26TtIWA",
@@ -363,7 +363,7 @@
       "confidence": null,
       "review_status": "confirmed",
       "extraction_method": "manual_source_review",
-      "note": "Book title on Ball’s linked book page. No transcript timestamp assigned."
+      "note": "Book title on the linked book page. No transcript timestamp assigned."
     },
     {
       "id": "buying-power-Rnbyxj-NWa4",
@@ -376,7 +376,7 @@
       "confidence": null,
       "review_status": "confirmed",
       "extraction_method": "exact_alias+manual_context",
-      "note": "Chapter-by-chapter discussion of Ball’s own book."
+      "note": "Chapter-by-chapter discussion of the presenter’s own book."
     },
     {
       "id": "fantasies-master-race-eN0XQbWuZ48",
@@ -467,7 +467,7 @@
       "confidence": null,
       "review_status": "confirmed",
       "extraction_method": "exact_alias+manual_context",
-      "note": "Ball identifies Biko’s book as the title’s inspiration; captions repeat “I write”."
+      "note": "The presenter identifies Biko’s book as the title’s inspiration; captions repeat “I write”."
     },
     {
       "id": "strangers-neighbors-Rnbyxj-NWa4",
@@ -493,7 +493,7 @@
       "confidence": null,
       "review_status": "confirmed",
       "extraction_method": "exact_alias+manual_context",
-      "note": "Ball recalls a friendly disagreement with its author about copyright and the internet."
+      "note": "The presenter recalls a friendly disagreement with its author about copyright and the internet."
     },
     {
       "id": "color-of-money-Rnbyxj-NWa4",
@@ -506,12 +506,12 @@
       "confidence": null,
       "review_status": "confirmed",
       "extraction_method": "exact_alias+manual_context",
-      "note": "Ball identifies the book and discusses his use of Baradaran’s research."
+      "note": "The presenter identifies the book and discusses his use of Baradaran’s research."
     }
   ],
   "coverage": {
     "as_of": "2026-11-09",
-    "scope": "Manually selected transcript-access pilot from @jaredaball",
+    "scope": "Manually selected transcript-access pilot",
     "inventory": null,
     "pilot_sample": [
       "Rnbyxj-NWa4",
@@ -526,6 +526,6 @@
       "8O37uhtotfM"
     ],
     "segments_processed": 22828,
-    "notice": "Starter collection, not a complete channel inventory. Ten source videos were selected manually from Ball’s public website and verified against @jaredaball. All ten transcripts were retrieved. Exact title matches were reviewed in context. Full-channel discovery still requires a YouTube Data API key. Only short excerpts are displayed; captions can contain errors."
+    "notice": "Starter collection, not a complete channel inventory. Ten source videos were selected manually from public source pages and checked against their source channel. All ten transcripts were retrieved. Exact title matches were reviewed in context. Full-channel discovery requires a YouTube Data API key. Only short excerpts are displayed; captions can contain errors."
   }
 }
