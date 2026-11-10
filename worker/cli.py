@@ -6,7 +6,7 @@ import sqlite3
 import sys
 
 from .db import connect, finish_run, migrate, start_run, utc_now
-from .transcript_pilot import select_sample
+from .transcript_pilot import run_transcript_pilot, select_sample
 from .youtube_inventory import YouTubeAPIError, YouTubeClient, upsert_videos
 
 
@@ -19,8 +19,11 @@ def parser() -> argparse.ArgumentParser:
     inventory.add_argument("--api-key", default=os.getenv("YOUTUBE_API_KEY"))
     inventory.add_argument("--dry-run", action="store_true", help="fetch and report without writing videos")
     inventory.add_argument("--no-hydrate", action="store_true", help="skip videos.list metadata hydration")
-    pilot = sub.add_parser("transcript-pilot", help="select the deterministic transcript pilot sample")
+    pilot = sub.add_parser("transcript-pilot", help="retrieve transcripts for a deterministic pilot sample")
     pilot.add_argument("--sample-size", type=int, default=20)
+    pilot.add_argument("--languages", default="en", help="comma-separated preferred language codes (default: en)")
+    pilot.add_argument("--retries", type=int, default=1, help="transient retries per video (default: 1)")
+    pilot.add_argument("--backoff", type=float, default=2.0, help="seconds between retries (default: 2)")
     return root
 
 
@@ -54,8 +57,11 @@ def run_inventory(args: argparse.Namespace) -> int:
 
 
 def run_pilot(args: argparse.Namespace) -> int:
+    if args.sample_size <= 0 or args.retries < 0:
+        raise SystemExit("--sample-size must be positive and --retries cannot be negative")
     connection = connect(args.database)
     migrate(connection)
+    run_id = None
     try:
         sample = select_sample(connection, args.sample_size)
         if not sample:
@@ -68,10 +74,21 @@ def run_pilot(args: argparse.Namespace) -> int:
                 (video["video_id"], len(sample), selected_at),
             )
         connection.commit()
-        print(f"Selected and recorded {len(sample)} videos for the transcript pilot (retrieval not implemented yet):")
-        for video in sample:
-            print(f"{video['video_id']}\t{video['published_at'] or 'unknown'}\t{video['title']}")
+        run_id = start_run(connection, "transcript_pilot")
+        languages = [language.strip() for language in args.languages.split(",") if language.strip()]
+        if not languages:
+            raise SystemExit("--languages must contain at least one language code")
+        stats = run_transcript_pilot(
+            connection, sample, languages=languages, retries=args.retries, sleep_seconds=args.backoff
+        )
+        finish_run(connection, run_id, "success", stats)
+        print("Transcript pilot coverage:")
+        print("  " + ", ".join(f"{key}={value}" for key, value in stats.items()))
         return 0
+    except RuntimeError as exc:
+        if run_id is not None:
+            finish_run(connection, run_id, "error", {}, str(exc))
+        raise SystemExit(str(exc)) from exc
     finally:
         connection.close()
 

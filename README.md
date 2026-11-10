@@ -5,7 +5,7 @@ Searchable archive of books mentioned in YouTube videos.
 ## Setup
 
 ```sh
-python -m venv .venv
+python3 -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
@@ -14,6 +14,6 @@ cp .env.example .env
 Set `YOUTUBE_API_KEY`, then run:
 
 ```sh
-python -m worker inventory --handle @channelhandle
-python -m worker transcript-pilot --sample-size 20
+python3 -m worker inventory --handle @channelhandle
+python3 -m worker transcript-pilot --sample-size 20
 ```
