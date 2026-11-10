@@ -1,0 +1,556 @@
+{
+  "books": [
+    {
+      "id": "buying-power",
+      "title": "The Myth and Propaganda of Black Buying Power",
+      "author": "Jared A. Ball",
+      "subject": "Economics",
+      "year": 2020,
+      "isbn": "9783030423544",
+      "open_library_id": "/works/OL20851912W",
+      "cover_url": "/covers/buying-power.jpg",
+      "description": "A study of the buying-power narrative, marketing, and racial inequality.",
+      "aliases": [
+        "The Myth and Propaganda of Black Buying Power"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "mixtape-manifesto",
+      "title": "I Mix What I Like! A Mixtape Manifesto",
+      "author": "Jared A. Ball",
+      "subject": "Media & culture",
+      "year": 2011,
+      "isbn": "1849350574",
+      "open_library_id": "/works/OL16229077W",
+      "cover_url": "/covers/mixtape-manifesto.jpg",
+      "description": "Mixtape radio, independent journalism, and the politics of communication.",
+      "aliases": [
+        "I Mix What I Like"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "black-arts-movement",
+      "title": "Building the Black Arts Movement",
+      "author": "Jonathan Fenderson",
+      "subject": "Media & culture",
+      "year": 2019,
+      "isbn": "9780252042430",
+      "open_library_id": "/works/OL20156062W",
+      "cover_url": "/covers/black-arts-movement.jpg",
+      "description": "Hoyt Fuller and the cultural politics of the 1960s.",
+      "aliases": [
+        "Building the Black Arts Movement"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "i-write-what-i-like",
+      "title": "I Write What I Like",
+      "author": "Steve Biko",
+      "subject": "Black liberation",
+      "year": null,
+      "isbn": "0435902172",
+      "open_library_id": "/works/OL2806757W",
+      "cover_url": "/covers/i-write-what-i-like.jpg",
+      "description": "Selected writings on Black Consciousness in South Africa.",
+      "aliases": [
+        "I Write What I Like"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "stealing-empire",
+      "title": "Stealing Empire",
+      "author": "Adam Haupt",
+      "subject": "Media & culture",
+      "year": 2008,
+      "isbn": "9780796922090",
+      "open_library_id": "/works/OL9566057W",
+      "cover_url": "/covers/stealing-empire.jpg",
+      "description": "Peer-to-peer networks, intellectual property, and cultural production in South Africa.",
+      "aliases": [
+        "Stealing Empire"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "strangers-neighbors",
+      "title": "Strangers & Neighbors",
+      "author": "Maurianne Adams & John H. Bracey (editors)",
+      "subject": "History & politics",
+      "year": 1999,
+      "isbn": "1558492356",
+      "open_library_id": "/works/OL19501345W",
+      "cover_url": "/covers/strangers-neighbors.jpg",
+      "description": "An anthology on relations between Black and Jewish communities in the United States.",
+      "aliases": [
+        "Strangers & Neighbors"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "color-of-money",
+      "title": "The Color of Money",
+      "author": "Mehrsa Baradaran",
+      "subject": "Economics",
+      "year": 2017,
+      "isbn": "9780674237476",
+      "open_library_id": "/works/OL20157329W",
+      "cover_url": "/covers/color-of-money.jpg",
+      "description": "Black banks and the racial wealth gap.",
+      "aliases": [
+        "The Color of Money"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "fantasies-master-race",
+      "title": "Fantasies of the Master Race",
+      "author": "Ward Churchill",
+      "subject": "History & politics",
+      "year": 1992,
+      "isbn": "0962883875",
+      "open_library_id": "/works/OL581079W",
+      "cover_url": "/covers/fantasies-master-race.jpg",
+      "description": "Literature, cinema, and the colonization of American Indians.",
+      "aliases": [
+        "Fantasies of the Master Race"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "struggle-land",
+      "title": "Struggle for the Land",
+      "author": "Ward Churchill",
+      "subject": "History & politics",
+      "year": null,
+      "isbn": "9780872864146",
+      "open_library_id": "/works/OL581077W",
+      "cover_url": "/covers/struggle-land.jpg",
+      "description": "Native North American resistance to genocide, ecocide, and colonization.",
+      "aliases": [
+        "Struggle for the Land"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "agents-repression",
+      "title": "Agents of Repression",
+      "author": "Ward Churchill & Jim Vander Wall",
+      "subject": "History & politics",
+      "year": 1988,
+      "isbn": "0896082946",
+      "open_library_id": "/works/OL581087W",
+      "cover_url": "/covers/agents-repression.jpg",
+      "description": "The FBI’s secret wars against the Black Panther Party and the American Indian Movement.",
+      "aliases": [
+        "Agents of Repression"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    },
+    {
+      "id": "little-matter-genocide",
+      "title": "A Little Matter of Genocide",
+      "author": "Ward Churchill",
+      "subject": "History & politics",
+      "year": 1997,
+      "isbn": "0872863239",
+      "open_library_id": "/works/OL581091W",
+      "cover_url": "/covers/little-matter-genocide.jpg",
+      "description": "Holocaust and denial in the Americas.",
+      "aliases": [
+        "A Little Matter of Genocide"
+      ],
+      "verified_at": "2026-11-10T00:30:43.134728+00:00"
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "Rnbyxj-NWa4",
+      "title": "The Myth and Propaganda of Black Buying Power Full Book Breakdown!",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=Rnbyxj-NWa4",
+      "published_at": null,
+      "duration_seconds": 22121.878,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2024/08/25/the-myth-and-propaganda-of-black-buying-power-full-book-breakdown/",
+      "source_date": "2024-08-25"
+    },
+    {
+      "video_id": "AFhaTXDtMtQ",
+      "title": "A Mixtape Manifesto! A Misunderstood Unsanctioned Medium!",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=AFhaTXDtMtQ",
+      "published_at": null,
+      "duration_seconds": 10904.399,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2011/07/01/i-mix-what-i-like-a-mixtape-manifesto/",
+      "source_date": "2011-07-01"
+    },
+    {
+      "video_id": "teZa7xEZYoU",
+      "title": "Hoyt Fuller and The Black Arts Movement ft. Dr. Jonathan Fenderson",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=teZa7xEZYoU",
+      "published_at": null,
+      "duration_seconds": 3577.559,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2024/09/25/hoyt-fuller-and-the-architects-of-the-black-arts-movement/",
+      "source_date": "2024-09-25"
+    },
+    {
+      "video_id": "eN0XQbWuZ48",
+      "title": "Indigenous Buying Power and Other Historical Fallacies ft Ward Churchill",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=eN0XQbWuZ48",
+      "published_at": null,
+      "duration_seconds": 2462.2,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2024/04/18/wardchurchillonnationalmyths/",
+      "source_date": "2024-04-18"
+    },
+    {
+      "video_id": "Bh6k5tpuN2A",
+      "title": "Dr. King Was No Thought Leader. He Was a Revolutionary!",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=Bh6k5tpuN2A",
+      "published_at": null,
+      "duration_seconds": 4239.84,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2023/01/05/dr-king-was-no-thought-leader/",
+      "source_date": "2023-01-05"
+    },
+    {
+      "video_id": "4EcT26TtIWA",
+      "title": "📕A 7 Minute Summary Redux Summary Presentation of the Myth and Propaganda of Black Buying Power",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=4EcT26TtIWA",
+      "published_at": null,
+      "duration_seconds": 429.88,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2023/05/19/mobp/",
+      "source_date": "2023-05-19"
+    },
+    {
+      "video_id": "i-IzPDQ0PjY",
+      "title": "The G.O.A.T. of Journalism! This Is the Best Press Coverage of My Book Ever!",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=i-IzPDQ0PjY",
+      "published_at": null,
+      "duration_seconds": 556.279,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2025/05/05/the-g-o-a-t-of-journalism-this-is-the-best-press-coverage-of-my-book-ever/",
+      "source_date": "2025-05-05"
+    },
+    {
+      "video_id": "DeJrGO-ntr8",
+      "title": "15th Anniversary of I Mix What I Like! A Mixtape Manifesto",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=DeJrGO-ntr8",
+      "published_at": null,
+      "duration_seconds": 6248.28,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2011/07/01/i-mix-what-i-like-a-mixtape-manifesto/",
+      "source_date": "2011-07-01"
+    },
+    {
+      "video_id": "gYjMhPJnDvM",
+      "title": "iMWiL! 10th Anniversary!",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=gYjMhPJnDvM",
+      "published_at": null,
+      "duration_seconds": 5660.6,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2011/07/01/i-mix-what-i-like-a-mixtape-manifesto/",
+      "source_date": "2011-07-01"
+    },
+    {
+      "video_id": "8O37uhtotfM",
+      "title": "Solutions Focussed: A #MOBP Workshop Discussion",
+      "channel_id": "UCLDStf3ZRPBoqy60ez62O2Q",
+      "url": "https://www.youtube.com/watch?v=8O37uhtotfM",
+      "published_at": null,
+      "duration_seconds": 4200.6,
+      "description": "",
+      "source_url": "https://imixwhatilike.org/2025/10/27/solutions-focussed-a-mobp-workshop-discussion/",
+      "source_date": "2025-10-27"
+    }
+  ],
+  "mentions": [
+    {
+      "id": "buying-power-Rnbyxj-NWa4",
+      "book_id": "buying-power",
+      "video_id": "Rnbyxj-NWa4",
+      "start_seconds": 28.72,
+      "evidence_excerpt": "the myth and propaganda of black buying power",
+      "evidence_type": "transcript",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Chapter-by-chapter discussion of Ball’s own book."
+    },
+    {
+      "id": "strangers-neighbors-Rnbyxj-NWa4",
+      "book_id": "strangers-neighbors",
+      "video_id": "Rnbyxj-NWa4",
+      "start_seconds": 3773.44,
+      "evidence_excerpt": "Strangers and Neighbors",
+      "evidence_type": "transcript",
+      "classification": "referenced",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Introduced as a 1999 collection of essays before a Derrick Bell quotation."
+    },
+    {
+      "id": "color-of-money-Rnbyxj-NWa4",
+      "book_id": "color-of-money",
+      "video_id": "Rnbyxj-NWa4",
+      "start_seconds": 18809.36,
+      "evidence_excerpt": "the color of money",
+      "evidence_type": "transcript",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Ball identifies the book and discusses his use of Baradaran’s research."
+    },
+    {
+      "id": "mixtape-manifesto-AFhaTXDtMtQ",
+      "book_id": "mixtape-manifesto",
+      "video_id": "AFhaTXDtMtQ",
+      "start_seconds": 270.32,
+      "evidence_excerpt": "this book here I mix what I like a mixtape Manifesto",
+      "evidence_type": "transcript",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "The author introduces his own book. Caption capitalization is preserved."
+    },
+    {
+      "id": "i-write-what-i-like-AFhaTXDtMtQ",
+      "book_id": "i-write-what-i-like",
+      "video_id": "AFhaTXDtMtQ",
+      "start_seconds": 1456.96,
+      "evidence_excerpt": "I write I write what I like",
+      "evidence_type": "transcript",
+      "classification": "referenced",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Ball identifies Biko’s book as the title’s inspiration; captions repeat “I write”."
+    },
+    {
+      "id": "stealing-empire-AFhaTXDtMtQ",
+      "book_id": "stealing-empire",
+      "video_id": "AFhaTXDtMtQ",
+      "start_seconds": 6017.719,
+      "evidence_excerpt": "stealing Empire",
+      "evidence_type": "transcript",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Ball recalls a friendly disagreement with its author about copyright and the internet."
+    },
+    {
+      "id": "black-arts-movement-teZa7xEZYoU",
+      "book_id": "black-arts-movement",
+      "video_id": "teZa7xEZYoU",
+      "start_seconds": 75.96,
+      "evidence_excerpt": "building the Black Arts Movement",
+      "evidence_type": "transcript",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Jonathan Fenderson is introduced with the book’s title and subtitle."
+    },
+    {
+      "id": "fantasies-master-race-eN0XQbWuZ48",
+      "book_id": "fantasies-master-race",
+      "video_id": "eN0XQbWuZ48",
+      "start_seconds": 42.32,
+      "evidence_excerpt": "fantasies of the master race",
+      "evidence_type": "transcript",
+      "classification": "referenced",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "One of the works listed in Ward Churchill’s biographical introduction."
+    },
+    {
+      "id": "struggle-land-eN0XQbWuZ48",
+      "book_id": "struggle-land",
+      "video_id": "eN0XQbWuZ48",
+      "start_seconds": 42.32,
+      "evidence_excerpt": "struggle for the land",
+      "evidence_type": "transcript",
+      "classification": "referenced",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Title begins at the end of the caption segment starting at 0:42."
+    },
+    {
+      "id": "agents-repression-eN0XQbWuZ48",
+      "book_id": "agents-repression",
+      "video_id": "eN0XQbWuZ48",
+      "start_seconds": 51.76,
+      "evidence_excerpt": "agents of repression",
+      "evidence_type": "transcript",
+      "classification": "referenced",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Listed in the guest’s biographical introduction; the record includes coauthor Jim Vander Wall."
+    },
+    {
+      "id": "little-matter-genocide-eN0XQbWuZ48",
+      "book_id": "little-matter-genocide",
+      "video_id": "eN0XQbWuZ48",
+      "start_seconds": 54.52,
+      "evidence_excerpt": "a little matter of genocide",
+      "evidence_type": "transcript",
+      "classification": "referenced",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "exact_alias+manual_context",
+      "note": "Listed in the guest’s biographical introduction."
+    },
+    {
+      "id": "mixtape-manifesto-DeJrGO-ntr8",
+      "book_id": "mixtape-manifesto",
+      "video_id": "DeJrGO-ntr8",
+      "start_seconds": null,
+      "evidence_excerpt": "15th Anniversary of I Mix What I Like! A Mixtape Manifesto",
+      "evidence_type": "video_title",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "manual_source_review",
+      "note": "The source video title identifies the book. No precise passage is assigned."
+    },
+    {
+      "id": "mixtape-manifesto-gYjMhPJnDvM",
+      "book_id": "mixtape-manifesto",
+      "video_id": "gYjMhPJnDvM",
+      "start_seconds": null,
+      "evidence_excerpt": "I Mix What I Like! A Mixtape Manifesto",
+      "evidence_type": "show_notes",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "manual_source_review",
+      "note": "Book title on Ball’s source page, which embeds this anniversary video. No timestamp inferred."
+    },
+    {
+      "id": "buying-power-4EcT26TtIWA",
+      "book_id": "buying-power",
+      "video_id": "4EcT26TtIWA",
+      "start_seconds": null,
+      "evidence_excerpt": "The Myth and Propaganda of Black Buying Power",
+      "evidence_type": "show_notes",
+      "classification": "discussed",
+      "confidence": null,
+      "review_status": "confirmed",
+      "extraction_method": "manual_source_review",
+      "note": "Book title on Ball’s linked book page. No transcript timestamp assigned."
+    }
+  ],
+  "attempts": [
+    {
+      "video_id": "Rnbyxj-NWa4",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:24:59.403978+00:00"
+    },
+    {
+      "video_id": "AFhaTXDtMtQ",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:25:06.840139+00:00"
+    },
+    {
+      "video_id": "teZa7xEZYoU",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:25:50.153079+00:00"
+    },
+    {
+      "video_id": "eN0XQbWuZ48",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:25:55.745201+00:00"
+    },
+    {
+      "video_id": "Bh6k5tpuN2A",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:25:59.638062+00:00"
+    },
+    {
+      "video_id": "4EcT26TtIWA",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:26:03.930712+00:00"
+    },
+    {
+      "video_id": "i-IzPDQ0PjY",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:26:08.105403+00:00"
+    },
+    {
+      "video_id": "DeJrGO-ntr8",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:26:12.722116+00:00"
+    },
+    {
+      "video_id": "gYjMhPJnDvM",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:26:17.675970+00:00"
+    },
+    {
+      "video_id": "8O37uhtotfM",
+      "provider": "youtube-transcript-api 1.2.4",
+      "status": "available",
+      "error_code": null,
+      "attempted_at": "2026-11-10T00:27:14.282912+00:00"
+    }
+  ],
+  "coverage": {
+    "as_of": "2026-11-09",
+    "scope": "Manually selected transcript-access pilot from @jaredaball",
+    "inventory": null,
+    "pilot_sample": [
+      "Rnbyxj-NWa4",
+      "AFhaTXDtMtQ",
+      "teZa7xEZYoU",
+      "eN0XQbWuZ48",
+      "Bh6k5tpuN2A",
+      "4EcT26TtIWA",
+      "i-IzPDQ0PjY",
+      "DeJrGO-ntr8",
+      "gYjMhPJnDvM",
+      "8O37uhtotfM"
+    ],
+    "segments_processed": 22828,
+    "notice": "Starter collection, not a complete channel inventory. Ten source videos were selected manually from Ball’s public website and verified against @jaredaball. All ten transcripts were retrieved. Exact title matches were reviewed in context. Full-channel discovery still requires a YouTube Data API key. Only short excerpts are displayed; captions can contain errors."
+  }
+}
