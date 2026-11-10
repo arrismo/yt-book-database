@@ -81,6 +81,21 @@ def normalize(text):
 def exact_match(text, alias):
     return (' ' + normalize(alias) + ' ') in (' ' + normalize(text) + ' ')
 
+def book_alias_match(book_id, excerpt, aliases):
+    # The channel name is also a recurring jingle. Require the subtitle or
+    # nearby book language before treating it as the book title.
+    if book_id == 'mixtape-manifesto':
+        normalized = normalize(excerpt)
+        if ' a mixtape manifesto ' in f' {normalized} ':
+            return True
+        title = normalize('I Mix What I Like')
+        position = normalized.find(title)
+        if position < 0:
+            return False
+        nearby = normalized[max(0, position - 70):position + len(title) + 70]
+        return any(re.search(rf'\b{term}\b', nearby) for term in ('book', 'title', 'volume', 'manifesto', 'published', 'read'))
+    return any(exact_match(excerpt, alias) for alias in aliases)
+
 def classify_error(error):
     name = type(error).__name__
     if name in ('RequestBlocked','IpBlocked','PoTokenRequired','AgeRestricted'): return 'blocked'
@@ -98,7 +113,8 @@ def pilot(db, count=10, fetch=None, dry_run=False):
     if fetch is None:
         from youtube_transcript_api import YouTubeTranscriptApi
         fetch = YouTubeTranscriptApi().fetch
-    stats = {'sample':[v['video_id'] for v in selected], 'available':0,'blocked':0,'no_transcript':0,'unavailable':0,'error':0}
+    stats = {'sample':[v['video_id'] for v in selected], 'available':0,'blocked':0,'no_transcript':0,'unavailable':0,'error':0,
+             'attempted':0,'unattempted':n,'stop_reason':None}
     for i,v in enumerate(selected):
         error_code = None
         try:
@@ -109,8 +125,16 @@ def pilot(db, count=10, fetch=None, dry_run=False):
         except Exception as error:
             status = classify_error(error);error_code=type(error).__name__
         stats[status] += 1
+        stats['attempted'] += 1
+        stats['unattempted'] -= 1
         db.execute('INSERT INTO transcript_attempts(video_id,provider,status,error_code,attempted_at) VALUES(?,?,?,?,?)',(v['video_id'],'youtube-transcript-api',status,error_code,NOW()));db.commit()
-        print(v['video_id'], status, file=sys.stderr)
+        print(v['video_id'], status, f'({error_code})' if error_code else '', file=sys.stderr)
+        if error_code in ('IpBlocked', 'RequestBlocked'):
+            stats['stop_reason'] = error_code
+            print('Scan stopped: YouTube is blocking automated requests from this connection. '
+                  'This does not mean captions are missing. Pause scanning; do not repeatedly retry. '
+                  'After access recovers, try a small transcript-pilot before another full scan.', file=sys.stderr)
+            break
         if i+1<n: time.sleep(1) # No automatic bypasses or aggressive retries.
     return stats
 
@@ -120,13 +144,15 @@ def match(db):
         aliases=json.loads(b['aliases_json']) or [b['title']]
         for v in db.execute('SELECT video_id FROM videos').fetchall():
             segs=db.execute('SELECT * FROM transcript_segments WHERE video_id=? ORDER BY start_seconds',(v['video_id'],)).fetchall()
+            last_match_index=-4
             for i,s in enumerate(segs):
                 excerpt=' '.join(x['text'] for x in segs[i:i+4])
-                if any(exact_match(excerpt,a) for a in aliases):
-                    mid=hashlib.sha256(f"{b['id']}|{v['video_id']}|{s['start_seconds']}".encode()).hexdigest()[:20]
-                    # Candidates stay pending; a human must establish book context.
-                    db.execute("INSERT OR IGNORE INTO mentions(id,book_id,video_id,start_seconds,evidence_excerpt,evidence_type,classification,confidence,review_status,extraction_method,note) VALUES(?,?,?,?,?,'transcript','unclear',1,'pending','exact_alias','Requires manual context review; exact lexical match is not a recommendation.')",(mid,b['id'],v['video_id'],s['start_seconds'],excerpt[:260]))
-                    count+=1;break
+                if i-last_match_index < 4 or not book_alias_match(b['id'],excerpt,aliases):
+                    continue
+                mid=hashlib.sha256(f"{b['id']}|{v['video_id']}|{s['start_seconds']}".encode()).hexdigest()[:20]
+                # Candidates stay pending; a human must establish book context.
+                db.execute("INSERT OR IGNORE INTO mentions(id,book_id,video_id,start_seconds,evidence_excerpt,evidence_type,classification,confidence,review_status,extraction_method,note) VALUES(?,?,?,?,?,'transcript','unclear',1,'pending','exact_alias','Requires manual context review; exact lexical match is not a recommendation.')",(mid,b['id'],v['video_id'],s['start_seconds'],excerpt[:260]))
+                count+=1;last_match_index=i
     db.commit();return {'candidate_matches':count,'publication':'pending manual review'}
 
 def export(db):
@@ -153,6 +179,7 @@ def main():
     for name in ('seed','match','export','build'):sub.add_parser(name)
     q=sub.add_parser('inventory');q.add_argument('--handle',required=True,help='YouTube channel handle, for example @yourchannel');q.add_argument('--dry-run',action='store_true')
     q=sub.add_parser('transcript-pilot');q.add_argument('--sample-size',type=int,default=10);q.add_argument('--dry-run',action='store_true')
+    q=sub.add_parser('transcript-scan');q.add_argument('--all',action='store_true',help='Attempt one transcript fetch for every inventoried video')
     args=p.parse_args();db=database(args.database);start=NOW()
     try:
         if args.command=='seed':seed(db);stats={'seeded':True}
@@ -162,10 +189,17 @@ def main():
         elif args.command=='export':stats=export(db)
         elif args.command=='match':stats=match(db)
         elif args.command=='inventory':stats=inventory(db,args.handle,dry_run=args.dry_run)
-        else:
+        elif args.command=='transcript-pilot':
             if not 1<=args.sample_size<=20:raise RuntimeError('Use a sample size between 1 and 20.')
             stats=pilot(db,args.sample_size,dry_run=args.dry_run)
-        db.execute('INSERT INTO ingestion_runs(run_type,started_at,finished_at,status,stats_json) VALUES(?,?,?,?,?)',(args.command,start,NOW(),'completed',json.dumps(stats)));db.commit();print(json.dumps(stats,indent=2))
+        else:
+            if not args.all:raise RuntimeError('Pass --all to scan every inventoried video.')
+            count=db.execute('SELECT COUNT(*) FROM videos').fetchone()[0]
+            if not count:raise RuntimeError('No videos. Run inventory first.')
+            stats=pilot(db,count)
+        run_status = 'stopped' if stats.get('stop_reason') else 'completed'
+        db.execute('INSERT INTO ingestion_runs(run_type,started_at,finished_at,status,stats_json) VALUES(?,?,?,?,?)',(args.command,start,NOW(),run_status,json.dumps(stats)));db.commit();print(json.dumps(stats,indent=2))
+        if run_status == 'stopped': sys.exit(1)
     except Exception as error:
         # Avoid propagating HTTP error URLs containing a secret API key.
         message=str(error) if isinstance(error,RuntimeError) else type(error).__name__
